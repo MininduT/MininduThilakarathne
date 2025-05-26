@@ -1,0 +1,535 @@
+:root {
+    --primary-color: #46c3e5;
+    --secondary-color: #149b55;
+    --accent-color: #63f197;
+    --dark-color: #1e293b;
+    --light-color: #f8fafc;
+    --gradient-1: linear-gradient(135deg, #02235c 0%, #00a0fd 100%);
+    --gradient-2: linear-gradient(135deg, #65f163 0%, #a5b4fc 100%);
+  }
+  
+  body {
+    background: linear-gradient(
+      135deg,
+      var(--light-color) 0%,
+      #e2e8f0 100%
+    );
+    color: var(--dark-color);
+    font-weight: 500;
+  }
+  
+  .gradient-bg {
+    background: var(--gradient-1);
+  }
+  
+  .gradient-text {
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .lead.text-muted {
+    font-weight: 500;
+    color: #4b5563 !important; /* Darker shade for better readability */
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+  
+  /* Home section title enhancements */
+  .hero-name {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    text-transform: none;
+  }
+  
+  .hero-title {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+  }
+  
+  /* Enhanced text for project cards */
+  .project-card h3 {
+    font-weight: 600;
+    font-size: 1.4rem;
+  }
+  
+  .project-card p {
+    font-weight: 500;
+    color: #4b5563;
+  }
+  
+  /* Enhanced text for education cards */
+  .education-card h4 {
+    font-weight: 600;
+  }
+  
+  .education-card p {
+    font-weight: 500;
+    color: #4b5563;
+  }
+  
+  /* Enhanced text for skill sections */
+  .skill-bar h5 {
+    font-weight: 600;
+  }
+  
+  /* Enhanced text for certification items */
+  .cert-item p {
+    font-weight: 500;
+    color: #4b5563;
+  }
+  
+  /* Enhanced section headers */
+  .gradient-text {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+  }
+  
+  .section-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(30px);
+    overflow: hidden;
+  }
+  
+  .section-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .section-card:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
+  }
+  
+  .project-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .project-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .project-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(79, 70, 229, 0.15);
+  }
+  
+  .floating-nav {
+    position: fixed;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(-50%);
+    z-index: 1000;
+    background: white;
+    padding: 1rem;
+    border-radius: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards 1s;
+  }
+  
+  .floating-nav a {
+    color: var(--dark-color);
+    transition: all 0.3s;
+    position: relative;
+  }
+  
+  .floating-nav a:hover {
+    color: var(--primary-color);
+    transform: scale(1.1);
+  }
+  
+  .skill-bar {
+    height: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #e2e8f0;
+    position: relative;
+  }
+  
+  .skill-progress {
+    height: 100%;
+    background: var(--gradient-1);
+    border-radius: 15px;
+    width: 0;
+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .education-card {
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .education-card.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .education-card::before {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    transform: scale(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .education-card.visible::before {
+    transform: scale(1);
+  }
+  
+  .soft-skill-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  
+  .soft-skill-card.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .soft-skill-card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.1);
+  }
+  
+  .profile-img {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+  }
+  
+  .profile-img.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .social-btn {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .social-btn.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .social-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .hidden-project {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .hidden-project.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  #showMoreBtn {
+    transition: all 0.3s ease;
+  }
+  
+  #showMoreBtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+  }
+  
+  .certification-card {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    transition: all 0.3s ease;
+  }
+  
+  .certification-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .certification-scroll {
+    max-height: 300px;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+  }
+  
+  .certification-scroll.expanded {
+    max-height: 1000px;
+  }
+  
+  .cert-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+  
+  .cert-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .certification-badge {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .badge {
+    font-size: 0.85rem;
+    padding: 0.5em 1em;
+    border-radius: 20px;
+  }
+  
+  .project-card {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .project-card:hover {
+    border-color: var(--primary-color);
+  }
+  
+  .achievement-card {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .achievement-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.1);
+  }
+
+  /* Responsive Styles - Add to your existing styles.css */
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .floating-nav {
+      top: auto;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      transform: none;
+      display: flex;
+      justify-content: center;
+      border-radius: 15px 15px 0 0;
+      padding: 0.5rem;
+    }
+    
+    .floating-nav .d-flex {
+      flex-direction: row !important;
+      gap: 1rem !important;
+    }
+    
+    /* Profile image for mobile */
+    .profile-img {
+      width: 120px;
+      height: 120px;
+    }
+    
+    /* Adjust hero section text */
+    #home h1.display-3 {
+      font-size: calc(1.5rem + 1.5vw);
+    }
+    
+    /* Adjust section headers */
+    .display-4 {
+      font-size: calc(1.4rem + 1.2vw);
+    }
+    
+    /* Skill bars and cards adjustment */
+    .skill-bar {
+      height: 20px;
+    }
+    
+    /* Adjust padding for smaller screens */
+    .section-card {
+      padding: 1.5rem !important;
+    }
+    
+    /* Adjust project and skill cards */
+    .project-card, .soft-skill-card, .achievement-card {
+      padding: 1rem;
+    }
+    
+    /* Social buttons for mobile */
+    .social-btn {
+      padding: 0.5rem 1rem !important;
+      font-size: 0.9rem !important;
+    }
+  }
+  
+  /* Small screens (phones) */
+  @media (max-width: 576px) {
+    /* Further adjustments for very small screens */
+    #home .container .section-card {
+      padding: 1rem !important;
+    }
+    
+    .social-btn {
+      padding: 0.4rem 0.8rem !important;
+      font-size: 0.8rem !important;
+    }
+    
+    /* Stack social buttons on very small screens */
+    #home .d-flex.justify-content-center {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    /* Better spacing for stacked elements */
+    .mb-4 {
+      margin-bottom: 1rem !important;
+    }
+    
+    /* Ensure icons in project cards don't overflow */
+    .project-card .d-flex {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .project-card .gradient-bg {
+      margin-bottom: 1rem;
+      margin-right: 0 !important;
+    }
+    
+    /* Make sure detail buttons stay visible */
+    .project-card .btn {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+  }
+  
+  /* Tablet adjustments */
+  @media (min-width: 769px) and (max-width: 992px) {
+    .floating-nav {
+      right: 1rem;
+    }
+    
+    .section-card {
+      padding: 2rem !important;
+    }
+  }
+
+  /* Achievement icon in floating nav */
+  .nav-icon {
+    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.nav-icon:hover {
+  background-color: rgba(79, 70, 229, 0.1);
+}
+
+.nav-icon.active {
+  color: var(--primary-color);
+  background-color: rgba(79, 70, 229, 0.1);
+}
+
+@media (max-width: 768px) {
+  .floating-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.8rem 0.5rem;
+    border-radius: 15px 15px 0 0;
+    background: white;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .floating-nav .d-flex {
+    width: 100%;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 0 !important;
+    padding: 0 1rem;
+  }
+  
+  .nav-icon {
+    font-size: 1.4rem;
+    margin: 0;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  .nav-icon {
+    font-size: 1.2rem;
+    padding: 6px;
+  }
+}
+
+
