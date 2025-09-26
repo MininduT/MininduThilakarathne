@@ -103,6 +103,8 @@ const observerOptions = {
   function setupCertifications() {
     const certifications = [
       "Google Business Intelligence Professional Certificate",
+      "Introducing the Industrial Manufacturing Industry by SAP",
+      "Machine Learning Specialization by DeepLearning.AI and Stanford University ",
       "Microsoft Azure Fundamentals (AZ-900) Cert Prep by Microsoft Press offered by LinkedIn Learning",
       "Microsoft Power BI Data Analyst Associate (PL-300) Cert Prep by Microsoft Press offered by LinkedIn Learning",
       "Introduction to Microsoft Fabric by Microsoft Press offered by LinkedIn Learning",
