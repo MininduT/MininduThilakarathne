@@ -271,22 +271,28 @@ function setupFloatingNav() {
 
 
 
-  document.addEventListener("DOMContentLoaded", () => {
+   document.addEventListener("DOMContentLoaded", () => {
     const counters = document.querySelectorAll(".counter");
 
     counters.forEach(counter => {
+      counter.innerText = "1"; // start from 1
+
       const updateCounter = () => {
         const target = +counter.getAttribute("data-target");
-        const current = +counter.innerText;
-        const increment = Math.ceil(target / 100); // speed control
+        let current = +counter.innerText;
+
+        // adjust speed for smoother effect
+        const increment = 1;
+        const delay = 150; // smaller = faster, larger = slower
 
         if (current < target) {
           counter.innerText = current + increment;
-          setTimeout(updateCounter, 50);
+          setTimeout(updateCounter, delay);
         } else {
-          counter.innerText = target;
+          counter.innerText = target; // stop exactly at target
         }
       };
+
       updateCounter();
     });
   });
