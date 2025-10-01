@@ -542,7 +542,7 @@
       flex: 0 0 170px;
       background: #f5f6f8;
       border-radius: 10px;
-      color: #fff;
+      color: #333;
       padding: 15px;
       box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
       text-align: center;
@@ -558,7 +558,7 @@
 
     .about-card p {
       font-size: 0.9rem;
-      color: #0073e6;
+      color: #555;
       margin: 0;
     }
 
