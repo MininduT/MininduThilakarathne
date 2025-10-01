@@ -540,7 +540,7 @@
 
     .about-card {
       flex: 0 0 170px;
-      background: rgba(34, 34, 34, 0.8);
+      background: linear-gradient(145deg, #f9f9f9, #e6e6e6);
       border-radius: 10px;
       color: #fff;
       padding: 15px;
