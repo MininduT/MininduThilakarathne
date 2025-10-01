@@ -532,13 +532,22 @@
   }
 }
 
+.about-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px; /* spacing between cards */
+  flex-wrap: nowrap; /* keeps in one row */
+  margin-top: 20px;
+}
+
 .about-card {
-  flex: 0 0 170px;
+  flex: 0 0 200px; /* fixed width for uniform size */
   background: #f5f6f8; /* light grey background */
   border-radius: 10px;
-  color: #333; /* dark text */
-  padding: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* softer shadow */
+  color: #333;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   text-align: center;
   animation: fadeInUp 1s ease-out;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -550,15 +559,15 @@
 }
 
 .about-card h3 {
-  font-size: 1.9rem;
-  color: #0073e6; /* blue to match "About Me" heading */
-  margin-bottom: 5px;
+  font-size: 2rem;
+  color: #0073e6; /* blue to match heading */
+  margin-bottom: 8px;
   font-weight: bold;
 }
 
 .about-card p {
-  font-size: 0.9rem;
-  color: #555; /* neutral grey */
+  font-size: 0.95rem;
+  color: #555;
   margin: 0;
 }
 
